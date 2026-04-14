@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Palace of Arts • Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+        :root { --navy: #0a1f3d; --orange: #ff4d00; --blue: #00d4ff; }
+        * { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .logo-font { font-family: 'Space Grotesk', sans-serif; }
+        .hero-bg { background: linear-gradient(135deg, #0a1f3d 0%, #001233 100%); }
+        .nav-link { position: relative; }
+        .nav-link:after { content: ''; position: absolute; width: 0; height: 3px; bottom: -2px; left: 0; background-color: #ff4d00; }
+        .nav-link:hover:after, .nav-link.active:after { width: 100%; }
+        .graffiti-drip { animation: drip 3s infinite ease-in-out; }
+        @keyframes drip { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+    </style>
+</head>
+<body class="bg-[#0a1f3d] text-white overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 border-b border-white/10 bg-[#0a1f3d]/90 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <img src="logo.jpg" alt="The Palace of Arts" class="h-12 w-auto drop-shadow-2xl cursor-pointer" onclick="window.location.href='index.html'">
+                <div>
+                    <h1 class="logo-font text-2xl font-bold tracking-tighter">THE PALACE</h1>
+                    <p class="text-[#00d4ff] text-sm -mt-1 font-medium">OF ARTS</p>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium uppercase tracking-widest">
+                <a href="index.html" class="nav-link active">HOME</a>
+                <a href="about.html" class="nav-link">THE CREW</a>
+                <a href="gallery.html" class="nav-link">GALLERY</a>
+                <a href="battles.html" class="nav-link">BATTLES</a>
+                <a href="merch.html" class="nav-link">MERCH</a>
+                <a href="commissions.html" class="nav-link text-[#ff4d00] font-bold">ORDER DRAWINGS</a>
+            </div>
+            
+            <div class="flex items-center gap-x-4">
+                <a href="commissions.html" class="px-6 py-3 bg-[#ff4d00] hover:bg-orange-600 text-white font-bold uppercase text-sm rounded-xl flex items-center gap-x-2 shadow-lg shadow-orange-500/30">
+                    <i class="fas fa-crown"></i> ORDER NOW
+                </a>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-3xl"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0a1f3d] border-t border-white/10 px-6 py-4">
+            <div class="flex flex-col gap-y-4 text-center text-sm font-medium uppercase tracking-widest">
+                <a href="index.html" onclick="toggleMobileMenu()" class="py-2">HOME</a>
+                <a href="about.html" onclick="toggleMobileMenu()" class="py-2">THE CREW</a>
+                <a href="gallery.html" onclick="toggleMobileMenu()" class="py-2">GALLERY</a>
+                <a href="battles.html" onclick="toggleMobileMenu()" class="py-2">BATTLES</a>
+                <a href="merch.html" onclick="toggleMobileMenu()" class="py-2">MERCH</a>
+                <a href="commissions.html" onclick="toggleMobileMenu()" class="py-2 text-[#ff4d00]">ORDER DRAWINGS</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-bg min-h-screen flex items-center relative">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-x-2 bg-white/10 text-[#00d4ff] text-sm font-bold uppercase tracking-[3px] px-6 py-2 rounded-3xl border border-white/20">
+                    <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00d4ff] opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-[#00d4ff]"></span></span>
+                    NOW OPEN IN KIGALI
+                </div>
+                <h1 class="logo-font text-7xl md:text-8xl font-black leading-none tracking-tighter">THE PALACE<br>OF <span class="text-[#ff4d00]">ARTS</span></h1>
+                <p class="text-2xl md:text-3xl font-light text-white/80">Street kings. Canvas conquerors.<br>Where bold boys become legends.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="gallery.html" class="px-8 py-5 bg-white text-[#0a1f3d] font-bold text-xl rounded-3xl flex items-center gap-x-3 hover:scale-105">ENTER THE GALLERY</a>
+                    <a href="commissions.html" class="px-8 py-5 border-2 border-[#00d4ff] text-[#00d4ff] font-bold text-xl rounded-3xl flex items-center gap-x-3 hover:bg-[#00d4ff] hover:text-white">ORDER CUSTOM DRAWING 🔥</a>
+                </div>
+            </div>
+            <div class="flex justify-center md:justify-end">
+                <div class="relative">
+                    <img src="logo.jpg" alt="The Palace of Arts Logo" class="w-full max-w-[420px] drop-shadow-2xl graffiti-drip">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black border-t border-white/10 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center text-white/40 text-sm">© 2026 The Palace of Arts • Kigali, Rwanda</div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('hidden'); }
+    </script>
+</body>
+</html>
