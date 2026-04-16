@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Palace of Arts • Order Drawings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .logo-font { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#0a1f3d] text-white">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 border-b border-white/10 bg-[#0a1f3d]/90 backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <img src="logo.jpg" alt="The Palace of Arts" class="h-12 w-auto cursor-pointer" onclick="window.location.href='index.html'">
+                <div>
+                    <h1 class="logo-font text-2xl font-bold tracking-tighter">THE PALACE</h1>
+                    <p class="text-[#00d4ff] text-sm -mt-1 font-medium">OF ARTS</p>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium uppercase tracking-widest">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="about.html" class="nav-link">THE CREW</a>
+                <a href="gallery.html" class="nav-link">GALLERY</a>
+                <a href="battles.html" class="nav-link">BATTLES</a>
+                <a href="merch.html" class="nav-link">MERCH</a>
+                <a href="commissions.html" class="nav-link text-[#ff4d00] font-bold active">ORDER DRAWINGS</a>
+            </div>
+            <a href="commissions.html" class="px-6 py-3 bg-[#ff4d00] text-white font-bold rounded-xl">ORDER NOW</a>
+        </div>
+    </nav>
+
+    <section class="hero-bg py-20 bg-gradient-to-br from-[#0a1f3d] to-[#001233]">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h1 class="logo-font text-6xl font-black">ORDER YOUR DRAWING 🔥</h1>
+            <p class="text-2xl mt-4 text-white/80">Tell us what you want — we make it in 7 days max</p>
+        </div>
+    </section>
+
+    <section class="py-12 bg-black">
+        <div class="max-w-3xl mx-auto px-6">
+            <form id="orderForm" class="bg-[#111827] p-8 rounded-3xl space-y-6">
+                <input type="text" id="name" placeholder="YOUR NAME (KING)" class="w-full bg-white/10 border border-white/30 rounded-3xl px-6 py-5 text-lg" required>
+                <input type="tel" id="phone" placeholder="YOUR WHATSAPP NUMBER (+250 ...)" class="w-full bg-white/10 border border-white/30 rounded-3xl px-6 py-5 text-lg" required>
+                <textarea id="idea" rows="5" placeholder="What do you want drawn? Be as wild as you want (example: me as a graffiti king with Palace crown...)" class="w-full bg-white/10 border border-white/30 rounded-3xl px-6 py-5 text-lg" required></textarea>
+                
+                <button type="button" onclick="sendToWhatsApp()" 
+                        class="w-full py-7 bg-[#ff4d00] hover:bg-orange-600 text-3xl font-bold rounded-3xl flex items-center justify-center gap-x-3">
+                    SEND ORDER ON WHATSAPP 👑
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+            <p class="text-center text-white/60 text-sm mt-6">You will be redirected to WhatsApp • We reply in max 2 hours</p>
+        </div>
+    </section>
+
+    <script>
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value || "No name";
+            const phone = document.getElementById('phone').value || "No number";
+            const idea = document.getElementById('idea').value || "No idea given";
+            
+            const message = `🔥 NEW ORDER from The Palace of Arts!%0A%0AName: ${name}%0APhone: ${phone}%0A%0AIdea: ${idea}%0A%0A%F0%9F%91%91 Please reply when you see this!`;
+            
+            const whatsappURL = `https://wa.me/250738601658?text=${message}`;  // ← CHANGE THIS NUMBER TO YOUR REAL WHATSAPP
+            window.open(whatsappURL, '_blank');
+            
+            alert("✅ Order sent to WhatsApp! The Palace kings will reply soon 🔥");
+        }
+    </script>
+</body>
+</html>
